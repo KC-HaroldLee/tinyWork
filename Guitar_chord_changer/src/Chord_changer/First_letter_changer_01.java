@@ -32,16 +32,16 @@ public class First_letter_changer_01 {
 		 /*maybe, It is better to give 'new code' to all of them. 
 		 *
 		 *C		:	0
-		 *C#	:	1
+		 *C#		:	1
 		 *D		: 	2
-		 *D#	:	3
+		 *D#		:	3
 		 *E		: 	4
 		 *F		:	5
-		 *F#	:	6
+		 *F#		:	6
 		 *G		: 	7
-		 *G#	:	8
+		 *G#		:	8
 		 *A		: 	9
-		 *A#	:	10
+		 *A#		:	10
 		 *B		:	11
 		 *Yeah these are better. at least till now.
 		 */
