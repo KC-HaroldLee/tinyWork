@@ -1,6 +1,5 @@
 package Chord_changer;
 	import java.lang.*;
-	import java.util.Arrays;
 	import java.util.Scanner;
 public class First_letter_changer_03 {
 	public static void main(String[] args) {
@@ -8,37 +7,30 @@ public class First_letter_changer_03 {
 		//Guitar chord transposition. only first letter - is enough 
 		//There are too many Guitar chords. but first letters are just 12. (C, C#, D ... A, A#, B) and all Uppercase.
 
-		//var
-		
-		String [] chordList = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
-		
-		// Ok I'll learn array loop till next time
-		int chordNo = 0;
-		int transposition=0;
-		String chordinput;
-		int chordNoNew;
-		int i = 0;
-		
 		//input
-		
-	Scanner s = new Scanner(System.in);		
-	while(true){			
-		System.out.println("Type First Letter (if it has '#' type with it. ex: 'C' or 'D#')");
-		chordinput = s.nextLine();
-		
+		String chordInput = ""; // C, C# ... B
+		String [] chordList = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"}; //How can i Loop this array?
+		int chordNo = 0; 
+		int chordNoNew;
+		int transposition=0;
 	
-		if(chordinput.equals(chordList[i])){
-			chordNo=i;
+	Scanner s = new Scanner(System.in);		
+	for(int i=0; i<13;){
+		
+		System.out.println("Type First Letter (if it has '#' type if it with. ex: 'C' or 'D#')");
+		chordInput = s.nextLine();
+		
+		if(chordList[i].equals(chordInput)){
+			System.out.println("That's not first letter of chords");
+			i++;
+		}
+		else{
+			System.out.println("Chord you typed is '" + chordInput +"'");
+			chordNo = i;
 			break;
 		}
-			else {
-			System.out.println("That's not first letter of chords");
-		}	
 	}
-
-	System.out.println("1st chord is '" + chordinput+"'");
-
-	//process
+	
 	while(true){
 		System.out.println("How many key you want to raise a chord you chosen? (You can type negative number) -6 to 6");
 		transposition = s.nextInt();
@@ -51,6 +43,9 @@ public class First_letter_changer_03 {
 		}
 		System.out.println("You want to raise '" + transposition+"'key(s)");
 	}
+	
+	//process
+	
 	/*chordList
 	*C		:	0 or 12
 	*C#		:	1 or 13
@@ -65,15 +60,10 @@ public class First_letter_changer_03 {
 	*A#		:	10or 22
 	*B		:	11or 23
 	*/
-
-	chordNoNew = (chordNo + transposition);
-			
 	
-	for(int j = -6; j<18; j++) {
-		if(chordNoNew == j) {
-		}
+	//result
+	chordNoNew = (chordNo + transposition);	
+	System.out.println(chordInput + " Change to " + chordList[chordNoNew+12]);
 	}
-	System.out.println(chordinput + " Change to " + chordList[chordNoNew+12]);
-}
 }
 		
