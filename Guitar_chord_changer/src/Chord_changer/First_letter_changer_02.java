@@ -9,66 +9,23 @@ public class First_letter_changer_02 {
 		//Guitar chord transposition. only first letter - is enough 
 		//There are too many Guitar chords. but first letters are just 12. (C, C#, D ... A, A#, B) and all Uppercase.
 
-		//var s
+		//var
 		String [] chordList = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 		// Ok I'll learn array loop till next time
-		int chordNo;
+		int chordNo = 0;
 		int transposition;
 		String input = "";
 		int chordNoNew;
-	
+		
+		//input
+
 		Scanner s = new Scanner(System.in);		
-	while(true) {
+	for(int i=0; i<12; i++){
 		System.out.println("Type First Letter (if it has '#' type with it. ex: 'C' or 'D#')");
+
 		input = s.nextLine();
-	
-		if(input.equals("C")) {
-			chordNo = 0;
-			break;
-		}
-		else if(input.equals("C#")) {
-			chordNo = 1;
-			break;
-		}
-		else if(input.equals("D")) {
-			chordNo = 2;
-			break;
-		}
-		else if(input.equals("D#")) {
-			chordNo = 3;
-			break;
-		}
-		else if(input.equals("E")) {
-			chordNo = 4;
-			break;
-		}
-		else if(input.equals("F")) {
-			chordNo = 5;
-			break;
-		}
-		else if(input.equals("F#")) {
-			chordNo = 6;
-			break;
-		}
-		else if(input.equals("G")) {
-			chordNo = 7;
-			break;
-		}
-		else if(input.equals("G#")) {
-			chordNo = 8;
-			break;
-		}
-		else if(input.equals("A")) {
-			chordNo = 9;
-			break;
-		}
-		else if(input.equals("A#")) {
-			chordNo = 10;
-			break;
-		}
-		else if(input.equals("B")) {
-			chordNo = 11;
-			break;
+		if(input == chordList[i]) {
+			
 		}
 		else {
 			System.out.println("That's not first letter of chords");
@@ -107,8 +64,8 @@ public class First_letter_changer_02 {
 	
 	chordNoNew = (chordNo + transposition);
 
-	for(int i = -6; i<18; i++) {
-		if(chordNoNew == i) {
+	for(int j = -6; j<18; j++) {
+		if(chordNoNew == j) {
 		}
 	}
 	System.out.println(input + " Change to " + chordList[chordNoNew+12]);
