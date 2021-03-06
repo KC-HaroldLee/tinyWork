@@ -61,9 +61,10 @@ public class First_letter_changer_02 {
 	*A#		:	10or 22
 	*B		:	11or 23
 	*/
-	
-	chordNoNew = (chordNo + transposition);
 
+	chordNoNew = (chordNo + transposition);
+			
+	
 	for(int j = -6; j<18; j++) {
 		if(chordNoNew == j) {
 		}
