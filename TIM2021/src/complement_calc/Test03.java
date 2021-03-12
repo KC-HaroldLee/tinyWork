@@ -1,4 +1,5 @@
 package complement_calc;
+
 import java.lang.*;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -7,11 +8,30 @@ public class Test03 {
 	public static void main(String[] args) {
 
 		// input
-		int a = 215;
-		int b = 15;
 
-		int[] sq = { 1, 2, 4, 8, 16, 32, 64, 128 };
-		int[] sqT = { 1, 2, 4, 8, 16, 32, 64, 128 };
+		int a;
+		int b;
+		Scanner sc = new Scanner(System.in);
+		while (true) {
+			System.out.println("Type 1st Int 0~255");
+			a = sc.nextInt();
+
+			if (a > 256) {
+			} else {
+				break;
+			}
+		}
+		while (true) {
+			System.out.println("Type 2nd Int 0~255");
+			b = sc.nextInt();
+
+			if (a > 256) {
+			} else {
+				break;
+			}
+		}
+
+		// int[] sq = { 1, 2, 4, 8, 16, 32, 64, 128 };//
 
 		int[] aBin = new int[8];
 		int[] bBin = new int[8];
@@ -28,7 +48,7 @@ public class Test03 {
 				/ 2; // 2^1
 		aBin[7] = a % 2; // 2^0
 
-		System.out.println(Arrays.toString(aBin));
+		System.out.println("a is " + Arrays.toString(aBin));
 
 		bBin[0] = b / 128; // 2^7
 		bBin[1] = (b - bBin[0] * 128) / 64; // 2^6
@@ -40,12 +60,15 @@ public class Test03 {
 				/ 2; // 2^1
 		bBin[7] = b % 2; // 2^0
 
-		System.out.println(Arrays.toString(bBin));
+		System.out.println("b is " + Arrays.toString(bBin));
 
 		// plus
 		int[] cBin = new int[8];
 		for (int i = 7; i >= 0; i--) {
 			cBin[i] = cBin[i] + aBin[i] + bBin[i];
+			if (cBin[0] >= 2) {
+				System.out.println("out of 255");
+			}
 			if (cBin[i] == 2) {
 				cBin[i] = 0;
 				cBin[i - 1] = 1;
@@ -56,9 +79,10 @@ public class Test03 {
 				cBin[i - 1] = 1;
 
 			}
+
 		}
 
-		System.out.println(Arrays.toString(cBin));
+		System.out.println("total = " + Arrays.toString(cBin));
 
 		// to dex
 		int c = 0;
@@ -70,6 +94,6 @@ public class Test03 {
 			}
 			k *= 2;
 		}
-		System.out.println(c);
+		System.out.println("to dex " + c);
 	}
 }
